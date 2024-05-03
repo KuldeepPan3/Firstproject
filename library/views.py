@@ -158,7 +158,7 @@ def issue(request):
     
     if request.method == "POST":
             book_id = request.POST["bid"]
-            current_book = Books.objects.get(id=book_id)
+            current_book = Books.objects.get(bid=bid)
             data = Books.objects.filter(bid=book_id)
             issue_item = IssuedItem.objects.create(
                 user_id=request.user, book_id=current_book
